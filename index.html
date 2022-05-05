@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Compare refugees list</h1>
+    <artile>
+        <fieldset>
+            <legend>Choose two lists for comparing</legend>
+
+            <label for="search-in-select">Search in:</label>
+            <select name="" id="search-in-select" class="select-search">
+                <option value="">Choose from list</option>
+            </select>
+
+            <label for="search-for-select">Search for:</label>
+            <select name="" id="search-for-select" class="select-search">
+                <option value="">Choose from list</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Choose by which parameters to compare</legend>
+
+            <!-- late coose of name or name+value -->
+            <div>
+                <input type="checkbox" name="search-option" value="1" id="option-1">
+                <label for="option-1">Family Name</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="search-option" value="2" id="option-2">
+                <label for="option-2">Given Name</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="search-option" value="3" id="option-3">
+                <label for="option-3">Middle Name</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="search-option" value="4" id="option-4">
+                <label for="option-4">Birth Date</label>
+            </div>
+        </fieldset>
+        <div>
+            <p>[1, 2, 3, 4] = Прізвище + Ім'я + По батькові + Дата народження</p>
+            <p>[1, 2, 3] = Прізвище + Ім'я + По батькові</p>
+            <p>[2, 3, 4] = Ім'я + По батькові + Дата народження</p>
+        </div>
+        <div>
+            <button id="compare-lists">Compare</button>
+            <button id="clear-root">Clear output</button>
+        </div>
+    </artile>
+
+    <div id="root"></div>
+
+    <!-- data to compare -->
+    <script src="./data-to-compare/2022.05.02_вибірки_маша/домашній_арешт_загальна.js"></script>
+    <script src="./data-to-compare/2022.05.02_вибірки_маша/кривдники_загальна.js"></script>
+    <script src="./data-to-compare/2022.05.02_вибірки_маша/раніше_засуджені_загальна.js"></script>
+    <script src="./data-to-compare/2022.05.02_вибірки_маша/розшук_загальна.js"></script>
+
+    <script src="./data-to-compare/2022.05.05_переселенці/2022.05.05_переселенці_загальна_1.js"></script>
+    <script src="./data-to-compare/2022.05.05_переселенці/2022.05.05_переселенці_загальна_2.js"></script>
+
+    <!-- root obj with all the data to compare -->
+    <script src="./data-to-compare/dataVariables.js"></script>
+
+    <!-- reading available data lists -->
+    <script src="./script/populateSelect.js"></script>
+
+    <!-- comparing data -->
+    <!-- <script src="./script/analyze-data/createIfCondition.js"></script> -->
+    <script src="./script/analyze-data/readOptions.js"></script>
+    <script src="./script/analyze-data/compareData.js"></script>
+    <script src="./script/showResult.js"></script>  
+
+    <!-- root sctipt -->
+    <script src="./script.js"></script>
+</body>
+</html>
