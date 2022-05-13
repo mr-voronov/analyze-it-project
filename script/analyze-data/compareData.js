@@ -18,6 +18,8 @@ function compareData(searchOptions) {
         const middleNameFor = elem['По батькові'];
         const birthDateFor = elem['Дата народження'];
 
+        const fileNameFor = elem['Файл оригінал'];
+
         // string key
         const combinedKeyFor = `${familyNameFor} ${givenNameFor} ${middleNameFor}, ${birthDateFor}`;
 
@@ -30,27 +32,30 @@ function compareData(searchOptions) {
             // condition 1 (searchFields: [1, 2, 3, 4]);
             if (searchFields.includes('1') && searchFields.includes('2') && searchFields.includes('3') && searchFields.includes('4')) {
                 if (familyNameFor === familyNameIn && givenNameFor === givenNameIn && middleNameFor === middleNameIn && birthDateFor === birthDateIn) {
-                    if (!comparisonResult[combinedKeyFor]) comparisonResult[combinedKeyFor] = [];
+                    if (!comparisonResult[fileNameFor]) comparisonResult[fileNameFor] = [];
+                    if (!comparisonResult[fileNameFor][combinedKeyFor]) comparisonResult[fileNameFor][combinedKeyFor] = [];
 
-                    comparisonResult[combinedKeyFor].push(`${familyNameIn} ${givenNameIn} ${middleNameIn}, ${birthDateIn}`);
+                    comparisonResult[fileNameFor][combinedKeyFor].push(`${familyNameIn} ${givenNameIn} ${middleNameIn}, ${birthDateIn}`);
                 }
             }
 
             // condition 2 (searchFields: [1, 2, 3]);
             if (searchFields.includes('1') && searchFields.includes('2') && searchFields.includes('3') && !searchFields.includes('4')) {
                 if (familyNameFor === familyNameIn && givenNameFor === givenNameIn && middleNameFor === middleNameIn && birthDateFor !== birthDateIn) {
-                    if (!comparisonResult[combinedKeyFor]) comparisonResult[combinedKeyFor] = [];
+                    if (!comparisonResult[fileNameFor]) comparisonResult[fileNameFor] = [];
+                    if (!comparisonResult[fileNameFor][combinedKeyFor]) comparisonResult[fileNameFor][combinedKeyFor] = [];
 
-                    comparisonResult[combinedKeyFor].push(`${familyNameIn} ${givenNameIn} ${middleNameIn}, ${birthDateIn}`);
+                    comparisonResult[fileNameFor][combinedKeyFor].push(`${familyNameIn} ${givenNameIn} ${middleNameIn}, ${birthDateIn}`);
                 }
             }
 
             // condition 3 (searchFields: [2, 3, 4]);
             if (!searchFields.includes('1') && searchFields.includes('2') && searchFields.includes('3') && searchFields.includes('4')) {
                 if (familyNameFor !== familyNameIn && givenNameFor === givenNameIn && middleNameFor === middleNameIn && birthDateFor === birthDateIn) {
-                    if (!comparisonResult[combinedKeyFor]) comparisonResult[combinedKeyFor] = [];
+                    if (!comparisonResult[fileNameFor]) comparisonResult[fileNameFor] = [];
+                    if (!comparisonResult[fileNameFor][combinedKeyFor]) comparisonResult[fileNameFor][combinedKeyFor] = [];
 
-                    comparisonResult[combinedKeyFor].push(`${familyNameIn} ${givenNameIn} ${middleNameIn}, ${birthDateIn}`);
+                    comparisonResult[fileNameFor][combinedKeyFor].push(`${familyNameIn} ${givenNameIn} ${middleNameIn}, ${birthDateIn}`);
                 }
             }
         });

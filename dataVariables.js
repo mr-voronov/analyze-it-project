@@ -21,8 +21,12 @@ const dataToCompare = {
         "textName": "Біженці 1",
         "variable": refugeesData1,
     },
-    "refugees2": {
-        "textName": "Біженці 2",
-        "variable": refugeesData2,
-    },
+    // "refugeesTest": {
+    //     "textName": "Біженці Test",
+    //     "variable": refugeesDataTest,
+    // },
+    // "wantedTest": {
+    //     "textName": "Розшук Test",
+    //     "variable": wantedDataTest,
+    // },
 };
